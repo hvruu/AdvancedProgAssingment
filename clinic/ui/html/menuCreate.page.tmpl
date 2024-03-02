@@ -1,0 +1,38 @@
+{{template "base" .}} {{define "title"}}News crating{{end}} {{define "main"}}
+<form action="/menu/create" method="POST">
+<input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+  {{with .Form}}
+
+  <div>
+    <label>Name of the dish:</label>
+    {{with .Errors.Get "meal_name"}}
+    <label class="error">{{.}}</label>
+    {{end}}
+    <textarea name="meal_name">{{.Get "content"}}</textarea>
+  </div>
+
+  <div>
+    <label>Weekday:</label>
+    <input type="radio" name="weekday" value="Monday" checked /> Monday
+    <input type="radio" name="weekday" value="Tuesday" /> Tuesday
+    <input type="radio" name="weekday" value="Wednesday" /> Wednesday
+    <input type="radio" name="weekday" value="Thursday" /> Thursday
+    <input type="radio" name="weekday" value="Friday" /> Friday
+    <input type="radio" name="weekday" value="Saturday" /> Saturday
+    <input type="radio" name="weekday" value="Sunday" /> Sunday
+  </div>
+
+  <div>
+    {{with .Errors.Get "quantity"}}
+    <label class="error">{{.}}</label>
+    {{end}}
+    <label>number of dishes:</label>
+    <input type="text" name="quantity" />
+  </div>
+
+  <div>
+    <input type="submit" value="Embed a dish in the menu" />
+  </div>
+  {{end}}
+</form>
+{{end}}

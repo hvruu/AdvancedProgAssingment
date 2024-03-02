@@ -1,0 +1,39 @@
+{{template "base" .}} {{define "title"}}News crating{{end}} {{define "main"}}
+<form action="/snippet/create" method="POST">
+<input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+  {{with .Form}}
+
+  <div>
+    <label>Title:</label>
+
+    {{with .Errors.Get "title"}}
+    <label class="error">{{.}}</label>
+    {{end}}
+    <input type="text" name="title" value='{{.Get "title"}}' />
+  </div>
+  <div>
+    <label>Content:</label>
+    {{with .Errors.Get "content"}}
+    <label class="error">{{.}}</label>
+    {{end}}
+    <textarea name="content">{{.Get "content"}}</textarea>
+  </div>
+  <div>
+    <label>Category:</label>
+    <input type="radio" name="category" value="For students" checked /> For
+    students <input type="radio" name="category" value="For staff" /> For staff
+    <input type="radio" name="category" value="For applicants" /> For applicants
+  </div>
+  <div>
+    {{with .Errors.Get "img_path"}}
+    <label class="error">{{.}}</label>
+    {{end}}
+    <label>Link to image:</label>
+    <input type="text" name="img_path" />
+  </div>
+  <div>
+    <input type="submit" value="Publish news" />
+  </div>
+  {{end}}
+</form>
+{{end}}

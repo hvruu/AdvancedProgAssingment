@@ -1,0 +1,101 @@
+{{template "base" .}} {{define "title"}} Home {{end}} {{define "main"}}
+<h2
+  style="
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+  "
+>
+  Contacts
+</h2>
+
+<div class="kingster-footer-column kingster-item-pdlr kingster-column-20">
+  <div
+    id="custom_html-2"
+    class="widget_text widget widget_custom_html kingster-widget"
+  >
+    <h3 class="kingster-widget-title">Astana IT University</h3>
+    <span class="clear"></span>
+    <div class="textwidget custom-html-widget">
+      <link rel="stylesheet" href="https://help.edu.kz/static/widget/app.css" />
+      <vue-widget domain="https://help.edu.kz"></vue-widget>
+      <script defer="" src="https://help.edu.kz/static/widget/app.js"></script>
+    </div>
+  </div>
+  <div id="text-41" class="widget widget_text kingster-widget contact-info">
+    <div class="textwidget">
+      <p>
+        <img
+          decoding="async"
+          loading="lazy"
+          class="alignnone wp-image-9014"
+          src="https://astanait.edu.kz/wp-content/uploads/2020/05/aitu-logo-white-2-300x154.png"
+          alt=""
+          width="146"
+          height="75"
+          srcset="
+            https://astanait.edu.kz/wp-content/uploads/2020/05/aitu-logo-white-2-300x154.png 300w,
+            https://astanait.edu.kz/wp-content/uploads/2020/05/aitu-logo-white-2.png         750w
+          "
+          sizes="(max-width: 146px) 100vw, 146px"
+        />
+      </p>
+      <p>
+        <span class="gdlr-core-space-shortcode" style="margin-top: 5px"></span
+        ><br />
+        <a
+          href="https://2gis.kz/astana/geo/70000001036709805"
+          target="_blank"
+          rel="noopener"
+          >проспект Мангилик Ел, 55/11<br />
+          Бизнес-центр EXPO, блок C1</a
+        ><br />
+        Астана, Казахстан, 010000
+      </p>
+      <p>+7 (7172) 645-710 приемная комиссия</p>
+      <p>info@astanait.edu.kz</p>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2067.111335769924!2d71.41615936926262!3d51.0909383089384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424585a605525605%3A0x4dff4a1973f7567e!2sAstana%20IT%20University!5e0!3m2!1sru!2skz!4v1705244074306!5m2!1sru!2skz"
+      width="600"
+      height="300"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
+
+<style>
+  .contact-info {
+    background-color: #444; /* Темный фон для блока контактной информации */
+    padding: 20px;
+    border-radius: 10px;
+    flex: 70%;
+  }
+
+  .contact-container {
+    display: flex;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  h2 {
+    color: #fff;
+  }
+
+  p {
+    margin: 10px 0;
+    color: #ccc;
+  }
+
+  iframe {
+    flex: 30%; /* Занимаем 30% ширины контейнера для карты */
+    border: 0;
+  }
+</style>
+{{end}}

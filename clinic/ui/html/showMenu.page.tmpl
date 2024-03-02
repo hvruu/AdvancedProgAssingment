@@ -1,0 +1,41 @@
+{{template "base" .}}
+{{define "title"}} Menu {{end}}
+{{define "main"}}
+  <h2 style="text-align: center">Menu</h2>
+
+  {{if .Menus}}
+    <table class="ytr">
+      <tr>
+        <th>ID</th>
+        <th>mealName</th>
+        <th>weekday</th>
+        <th>quantity</th>
+      </tr>
+
+      {{range .Menus}}
+        <tr>
+          <td>{{.ID}}</td>
+          <td>{{.Meal_name}}</td>
+          <td>{{.Weekday}}</td>
+          <td>{{.Quantity}}</td>
+        </tr>
+      {{end}}
+    </table>
+  {{else}}
+    <p>There's nothing to see here... yet!</p>
+  {{end}}
+{{end}}
+
+<style>
+  .ytr {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 10px;
+  }
+</style>
