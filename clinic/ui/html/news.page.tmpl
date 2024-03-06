@@ -1,0 +1,43 @@
+{{template "base" .}}
+{{define "title"}}News{{end}}
+{{define "main"}}
+
+<h2 style="text-align: center">Latest News</h2>
+
+{{if .Snippets}}
+<table>
+    {{range .Snippets}}
+    <tr>
+        <td>
+            <div class="news-container">
+                <div class="news-title">{{.Title}}</div>
+                <div class="image-container">
+                    <img
+                            src="{{.ImagePath}}"
+                            alt="Изображение новости"
+                            style="
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                  "
+                    >
+                </div>
+                <div class="news-content">
+                    <pre><code>{{.Content}}</code></pre>
+                </div>
+                <div class="metadata">
+                    <time>Created: {{humanDate .Created}}</time>
+                    <br>
+                    <time>Category: {{.Category}}<time>
+                </div>
+            </div>
+        </td>
+    </tr>
+    {{end}}
+</table>
+{{else}}
+<p>There's nothing to see here... yet!</p>
+{{end}}
+
+{{end}}

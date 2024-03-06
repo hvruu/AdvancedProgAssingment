@@ -1,0 +1,302 @@
+{{template "base" .}}
+
+{{define "title"}}
+Cosmetology
+{{end}}
+
+{{define "main"}}
+        <div class="containerr">
+            <div class="programm-title">
+                <p>Cosmetology programm</p>
+                <div class="rolling-ball"></div>
+            </div>
+            <div class="container-fluid my-carousel">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                    data-bs-interval:="4000">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                    </div>
+                    <div id="myCarousel" class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../../static/img/images/shutterstock_1780259423-scaled.png" class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../static/img/images/laser-clinics-why-should-you-do-a-full-body-laser-hair-removal.png"
+                                class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../static/img/images/chemical-peel (1).jpg" class="d-block w-100" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../static/img/images/cosmetologist1-640x230.jpg" class="d-block w-100" alt="" width="700"
+                                height="550">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3 g-4 px-5">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../../static/img/images/laser-clinics-candela-a-tailored-laser-hair-removal-for-you (1).png" id="height"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Laser hair removal</h5>
+                        <p class="card-text">Removal of unwanted hair using laser irradiation.</p>
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Massage</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            How It Works:
+                                            The laser targets the melanin in the hair follicle, which absorbs the light
+                                            and converts it into heat.
+                                            The heat damages the hair follicle, inhibiting its ability to produce new
+                                            hair.
+                                            <br>
+                                            <hr>
+                                            Suitability:
+                                            Laser hair removal is most effective for individuals with dark hair and
+                                            light skin because the laser can target the dark pigment more easily.
+                                            Advances in technology have made it possible for individuals with darker
+                                            skin tones to undergo laser hair removal, although results may vary.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">Learn more</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100" id="id">
+                    <img src="../../static/img/images/Facial-Versus-Clean-up_1024x1024.png" id="height" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Facial cleansing</h5>
+                        <p class="card-text">A procedure aimed at cleansing the skin, eliminating acne and comedones.
+                        </p>
+                        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Facial care</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            Cleansing Techniques:
+                                            Manual Cleansing: This involves using cleansers, exfoliants, and facial
+                                            brushes or sponges to manually remove impurities from the skin's surface.
+                                            Chemical Exfoliation: This method uses acids like alpha hydroxy acids (AHAs)
+                                            or beta hydroxy acids (BHAs) to dissolve dead skin cells and unclog pores.
+                                            <br>
+                                            <hr>
+                                            Professional vs. Home Facial Cleansing:
+                                            Professional Facials: Conducted by licensed estheticians, professional
+                                            facials often involve advanced techniques and specialized products tailored
+                                            to individual skin needs.
+                                            At-Home Care: Daily cleansing routines at home involve using suitable
+                                            cleansers, exfoliants, and masks based on skin type and concerns.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop1">Learn more</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../../static/img/images/botox-injection-botox-vs-fillers.jpg" id="height" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> Botox and fillers</h5>
+                        <p class="card-text">Using injections to reduce wrinkles and improve facial contours.</p>
+                        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Manicure and pedicure</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            Botox (Botulinum Toxin):
+                                            How It Works: Botox is a neurotoxin that temporarily paralyzes or relaxes
+                                            muscles, preventing them from contracting.
+                                            This reduces the appearance of wrinkles caused by repetitive muscle
+                                            movements, such as frown lines and crow's feet.
+                                            <br>
+                                            <hr>
+                                            Dermal Fillers:
+                                            Types of Fillers: Dermal fillers are substances injected beneath the skin to
+                                            add volume, fill lines, and enhance facial
+                                            contours. Common types include hyaluronic acid fillers, collagen fillers,
+                                            and others.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop2">Learn more</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3 g-4 px-5">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../../static/img/images/microdermabrasion.jpg" id="height" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Microdermabrasion</h5>
+                        <p class="card-text"> A mechanical exfoliation method that helps improve skin texture.</p>
+                        <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Hydrotherapy</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            Procedure Overview:
+                                            Mechanical Exfoliation: Microdermabrasion involves the use of a machine that
+                                            emits fine crystals or a diamond-tipped wand to gently abrade the outer
+                                            layer of the skin.
+                                            Vacuum Suction: Simultaneously, a vacuum suction device removes the
+                                            exfoliated skin cells, stimulating blood flow and promoting collagen
+                                            production.
+                                            <br>
+                                            <hr>
+                                            Purpose and Benefits:
+                                            Exfoliation: Microdermabrasion exfoliates the outermost layer of dead skin
+                                            cells, promoting cell turnover and revealing fresher, healthier skin.
+                                            Improving Skin Texture: It helps address concerns such as rough skin
+                                            texture, uneven pigmentation, and mild acne scars.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop3">Learn more</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../../static/img/images/Hair-Mesotherapy.png" id="height" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mesotherapy</h5>
+                        <p class="card-text">Introduction of special cocktails into the skin for hydration, nutrition
+                            and rejuvenation.</p>
+                        <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel4" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Aromatherapy</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            Purpose of Mesotherapy:
+                                            Hydration: Mesotherapy helps improve skin hydration, making it useful for
+                                            individuals with dry or dehydrated skin.
+                                            Nutrition: The infusion of vitamins and minerals provides essential
+                                            nutrients directly to the skin, promoting overall skin health.
+                                            Rejuvenation: Mesotherapy is often used for facial rejuvenation, reducing
+                                            the appearance of fine lines and promoting a more youthful complexion.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop4">Learn more</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../../static/img/images/b5737206-e95.jpg" id="height" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Peels</h5>
+                        <p class="card-text">Chemical peels are designed to remove the top layers of skin to improve its
+                            appearance and texture.</p>
+                        <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel5" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Wraps</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            Types of Chemical Peels:
+                                            Superficial Peels: These peels use mild acids, such as alpha hydroxy acids
+                                            (AHAs) or beta hydroxy acids (BHAs), to exfoliate the outer layer of the
+                                            skin. They are suitable for addressing minor skin concerns and require
+                                            little to no downtime.
+                                            Medium Peels: Medium-depth peels typically use stronger acids, such as
+                                            trichloroacetic acid (TCA), to penetrate deeper into the skin. They are
+                                            effective in treating more pronounced issues like fine lines, pigmentation,
+                                            and acne scars.
+                                            Deep Peels: Deep peels, often using phenol, penetrate the deepest layers of
+                                            the skin. They are reserved for more severe skin concerns and are usually
+                                            performed under sedation or general anesthesia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="btn" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop5">Learn more</button>
+                </div>
+            </div>
+        </div>
+{{end}}
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
