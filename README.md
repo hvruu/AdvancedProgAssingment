@@ -68,7 +68,9 @@ This code fragment represents a set of middleware functions for processing HTTP 
    ![image](https://github.com/hvruu/AdvancedProgAssingment/assets/147140948/03ff52b5-dcef-4bd6-8437-71e8e6fd2c76)
    ![image](https://github.com/hvruu/AdvancedProgAssingment/assets/147140948/bae537e8-7a0a-4efe-aaf7-0b750ee92df1)
 
-Github link: https://github.com/hvruu/AdvancedProgAssingment
+   :notebook: :black_nib: **Authors:** 
+   **Abai Akylzhanuly,Bekzat Stanbek,Galymzhan Syrymbet** 
+**Github link: https://github.com/hvruu/AdvancedProgAssingment** :shipit:
 
 
 
