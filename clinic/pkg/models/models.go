@@ -11,22 +11,6 @@ var (
 	ErrDuplicateEmail     = errors.New("models: duplicate email")
 )
 
-type Snippet struct {
-	ID        int
-	Title     string
-	Content   string
-	Category  string
-	ImagePath string
-	Created   time.Time
-}
-
-type Menu struct {
-	ID        int
-	Meal_name string
-	Weekday   string
-	Quantity  string
-}
-
 type User struct {
 	ID             int
 	Name           string
@@ -34,4 +18,25 @@ type User struct {
 	HashedPassword []byte
 	Created        time.Time
 	Active         bool
+	Balance        int
+	IsAdmin        bool
+	Phone          string
+}
+
+type Product struct {
+	ID          int
+	Name        string
+	ImagePath   string
+	Description string
+	Price       float64
+	Category    string
+}
+
+type News struct {
+	ID        int
+	Title     string
+	Content   string
+	Category  string
+	ImagePath string
+	Created   time.Time
 }

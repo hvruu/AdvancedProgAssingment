@@ -15,17 +15,17 @@ type UserModel struct {
 }
 
 // We'll use the Insert method to add a new record to the users table.
-func (m *UserModel) Insert(name, email, password string) error {
+func (m *UserModel) Insert(name, email, password, phone string) error {
 	// Create a bcrypt hash of the plain-text password.
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), 12)
 	if err != nil {
 		return err
 	}
-	stmt := `INSERT INTO users (name, email, hashed_password, created)
-VALUES(?, ?, ?, UTC_TIMESTAMP())`
+	stmt := `INSERT INTO users (name, email, hashed_password, created, isAdmin, phone)
+VALUES(?, ?, ?, UTC_TIMESTAMP(), 0, ?)`
 	// Use the Exec() method to insert the user details and hashed password
 	// into the users table.
-	_, err = m.DB.Exec(stmt, name, email, string(hashedPassword))
+	_, err = m.DB.Exec(stmt, name, email, string(hashedPassword), phone)
 	if err != nil {
 		// If this returns an error, we use the errors.As() function to check
 		// whether the error has the type *mysql.MySQLError. If it does, the
@@ -44,9 +44,6 @@ VALUES(?, ?, ?, UTC_TIMESTAMP())`
 	return nil
 }
 
-// We'll use the Authenticate method to verify whether a user exists with
-// the provided email address and password. This will return the relevant
-// user ID if they do.
 func (m *UserModel) Authenticate(email, password string) (int, error) {
 	// Retrieve the id and hashed password associated with the given email. If no
 	// matching email exists, or the user is not active, we return the
@@ -77,8 +74,27 @@ func (m *UserModel) Authenticate(email, password string) (int, error) {
 	return id, nil
 }
 
-// We'll use the Get method to fetch details for a specific user based
-// on their user ID.
-func (m *UserModel) Get(id int) (*models.User, error) {
-	return nil, nil
+func (m *UserModel) GetUser(id int) (*models.User, error) {
+	stmt := `SELECT  name, email, phone FROM users
+	WHERE id = ?`
+	row := m.DB.QueryRow(stmt, id)
+	b := &models.User{}
+	err := row.Scan(&b.Name, &b.Email, &b.Phone)
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return nil, models.ErrNoRecord
+		} else {
+			return nil, err
+		}
+	}
+	return b, nil
+}
+
+func (m *UserModel) GetUsername(id int) *models.User {
+	stmt := `SELECT  name FROM users
+	WHERE id = ?`
+	row := m.DB.QueryRow(stmt, id)
+	b := &models.User{}
+	row.Scan(&b.Name)
+	return b
 }

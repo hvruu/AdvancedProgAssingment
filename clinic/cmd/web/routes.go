@@ -13,12 +13,12 @@ func (app *application) routes() http.Handler {
 	mux := pat.New()
 
 	mux.Get("/", dynamicMiddleware.ThenFunc(app.home))
-	mux.Get("/snippet/create", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.createSnippetForm))
-	mux.Post("/snippet/create", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.createSnippet))
-	mux.Get("/menu/create", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.createMenuForm))
-	mux.Post("/menu/create", dynamicMiddleware.Append(app.requireAuthentication).ThenFunc(app.createMenu))
-	mux.Get("/menu", dynamicMiddleware.ThenFunc(app.showMenu))
-	mux.Get("/snippet/contacts", dynamicMiddleware.ThenFunc(app.showContacts))
+	mux.Get("/services/spa", dynamicMiddleware.ThenFunc(app.showSPA))
+	mux.Get("/services/cosmetology", dynamicMiddleware.ThenFunc(app.showCosmetology))
+	mux.Get("/products/selfcare", dynamicMiddleware.ThenFunc(app.showSelfcare))
+	mux.Get("/info/aboutUs", dynamicMiddleware.ThenFunc(app.showAboutUs))
+	mux.Get("/booking", dynamicMiddleware.ThenFunc(app.showBooking))
+	mux.Get("/news", dynamicMiddleware.ThenFunc(app.showNews))
 
 	mux.Get("/user/signup", dynamicMiddleware.ThenFunc(app.signupUserForm))
 	mux.Post("/user/signup", dynamicMiddleware.ThenFunc(app.signupUser))

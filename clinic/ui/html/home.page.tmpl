@@ -1,57 +1,58 @@
 {{template "base" .}}
 
 {{define "title"}}
-  Home
+Home
 {{end}}
 
 {{define "main"}}
-  <h2 style="text-align: center">Latest News</h2>
-
-  {{if .Snippets}}
-    <table>
-      {{range .Snippets}}
-        <tr>
-          <td>
-            <div class="news-container">
-              <div class="news-title">{{.Title}}</div>
-              <div class="image-container">
-                <img 
-                  src="{{.ImagePath}}" 
-                  alt="Изображение новости" 
-                  style="
-                    max-width: 100%; 
-                    height: auto; 
-                    display: block; 
-                    margin: 0 auto;
-                  "
-                >
-              </div>
-              <div class="news-content">
-                <pre><code>{{.Content}}</code></pre>
-              </div>
-              <div class="metadata">
-                <time>Created: {{humanDate .Created}}</time>
-                <br>
-                <time>Category: {{.Category}}<time>
-              </div>
+    <div class="container-fluid bg-image screen1">
+        <div class="container main_block">
+            <div class="row">
+                {{if .IsAuthenticated}}
+                <h6 class="display-6">Welcome, {{.User.Name}}!</h6>
+                {{else}}
+                <h6 class="display-6">Welcome!</h6>
+                {{end}}
             </div>
-          </td>
-        </tr>
-      {{end}}
-    </table>
-  {{else}}
-    <p>There's nothing to see here... yet!</p>
-  {{end}}
+            <div class="row">
+                <p class="font-CosSpaCenter">New SPA, Cosmetology Center</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row element-animation text-services text-align-center text-success">Services</div>
+        {{if .IsAuthenticated}}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card element-animation main-card">
+                    <a href="/services/spa">
+                        <img src="../static/img/images/AdobeStock_56635333.jpeg" class="card-img-top" alt="Spa Image">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title text-success card_text">Spa</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card element-animation main-card">
+                    <a href="/services/cosmetology">
+                        <img src="../static/img/images/botox-injection-botox-vs-fillers.jpg" class="card-img-top"
+                             alt="Cosmetology Image">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title text-success card_text">Cosmetology</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-12" style="text-align: center"><h1>Log in first</h1></div>
+    </div>
+{{end}}
 {{end}}
 
-<style>
-  .news-container {
-    text-align: left;
-    margin: 0 auto;
-    max-width: 600px; /* Установите максимальную ширину контейнера */
-  }
 
-  .image-container {
-    text-align: center;
-  }
-</style>
+<script src="../static/js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>

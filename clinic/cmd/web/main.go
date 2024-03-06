@@ -18,9 +18,10 @@ type application struct {
 	errorLog      *log.Logger
 	infoLog       *log.Logger
 	session       *sessions.Session
-	snippets      *mysql.SnippetModel
 	templateCache map[string]*template.Template
+	news          *mysql.NewsModel
 	users         *mysql.UserModel
+	products      *mysql.ProductModel
 }
 
 func main() {
@@ -54,9 +55,9 @@ func main() {
 		errorLog:      errorLog,
 		infoLog:       infoLog,
 		session:       session,
-		snippets:      &mysql.SnippetModel{DB: db},
 		templateCache: templateCache,
 		users:         &mysql.UserModel{DB: db},
+		products:      &mysql.ProductModel{DB: db},
 	}
 
 	srv := &http.Server{

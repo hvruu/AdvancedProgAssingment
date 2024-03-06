@@ -49,15 +49,15 @@ func newTemplateCache(dir string) (map[string]*template.Template, error) {
 	return cache, nil
 }
 
-// Include a Snippets field in the templateData struct.
 type templateData struct {
 	CSRFToken       string
 	CurrentYear     int
 	Form            *forms.Form
 	Flash           string
 	IsAuthenticated bool
-	Snippet         *models.Snippet
-	Snippets        []*models.Snippet
-	Menu            *models.Menu
-	Menus           []*models.Menu
+	User            *models.User
+	Users           []*models.User
+	Product         *models.Product
+	Products        []*models.Product
+	news            []*models.News
 }

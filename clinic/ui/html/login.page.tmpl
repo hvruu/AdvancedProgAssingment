@@ -1,23 +1,21 @@
 {{template "base" .}}
 {{define "title"}}Login{{end}}
 {{define "main"}}
-<form action='/user/login' method='POST' novalidate>
-<input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
-{{with .Form}}
-{{with .Errors.Get "generic"}}
-<div class='error'>{{.}}</div>
-{{end}}
-<div>
-<label>Email:</label>
-<input type='email' name='email' value='{{.Get "email"}}'>
-</div>
-<div>
-<label>Password:</label>
-<input type='password' name='password'>
-</div>
-<div>
-<input type='submit' value='Login'>
-</div>
-{{end}}
+<form action='/user/login' method='POST' novalidate class="p-4">
+    <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
+    {{with .Form}}
+    {{with .Errors.Get "generic"}}
+    <div class='error'>{{.}}</div>
+    {{end}}
+    <div class="mb-3 text-center mx-auto" style="width: 40%;">
+        <label for="email" class="form-label text-success">Email:</label>
+        <input type='email' name='email' value='{{.Get "email"}}' class="form-control" id="email">
+    </div>
+    <div class="mb-3 text-center mx-auto" style="width: 40%;">
+        <label for="password" class="form-label text-success">Password:</label>
+        <input type='password' name='password' class="form-control" id="password">
+    </div>
+    <button type="submit" class="btn btn-success d-block mx-auto">Login</button>
+    {{end}}
 </form>
 {{end}}
